@@ -15,7 +15,7 @@ CREATE TABLE products
     desc_html           TEXT      not null,
     price               decimal(12,2)     not null,
     image_urls          varchar[] not null,
-    parameters          TEXT,
+    parameters          json,
     create_at           DATE,
     category_parameters integer REFERENCES "category_parameters" (id)
 )

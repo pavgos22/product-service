@@ -16,4 +16,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
     long countActiveProducts();
 
     List<ProductEntity> findByNameAndCreateAt(String name, LocalDate createAt);
+    Optional<ProductEntity> findByUid(String uuid);
 }

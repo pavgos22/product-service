@@ -18,6 +18,6 @@ public abstract class ProductEntityToSimpleProduct {
     protected abstract SimpleProductDTO toSimpleProductDTO(ProductEntity productEntity);
 
     String getImageUrl(String[] images){
-        return images != null && images.length >= 1 ? images[0] : null;
+        return  images != null && images.length >= 1 ? images[0] : null;
     }
 }

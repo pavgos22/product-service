@@ -12,7 +12,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,14 +27,13 @@ public class ResetOperationService {
     @Transactional
     public ResetOperations initResetOperation(User user){
         log.info("--START initResetOperation");
-
         ResetOperations resetOperations = new ResetOperations();
+
         resetOperations.setUid(UUID.randomUUID().toString());
-        resetOperations.setCreateDate(LocalDateTime.now());
+        resetOperations.setCreateDate(new Timestamp(System.currentTimeMillis()).toString());
         resetOperations.setUser(user);
 
         resetOperationsRepository.deleteAllByUser(user);
-
         log.info("--STOP initResetOperation");
         return resetOperationsRepository.saveAndFlush(resetOperations);
     }

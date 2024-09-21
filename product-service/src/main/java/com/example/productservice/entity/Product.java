@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -14,9 +14,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @MappedSuperclass
 public class Product {
+
     private String uid;
     private boolean activate;
-    @Column(name="product_name")
+    @Column(name = "product_name")
     private String name;
     private String mainDesc;
     private String descHtml;
